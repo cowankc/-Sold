@@ -23,5 +23,19 @@ module.export = function(sequelize, DataTypes) {
       },
       freezeTableName: true
     });
+    Chef.associate = function(models) {
+      Chef.hasMany(models.meal, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+    Chef.associate = function(models) {
+      Chef.hasMany(models.review, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
     return Chef
     }

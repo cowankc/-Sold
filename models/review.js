@@ -1,10 +1,11 @@
 module.export = function(sequelize, DataTypes) {
     let Review = sequelize. define("review", {
-      name: {
+      rating: {
         rating: DataTypes.INTEGER,
         allowNull: false,
+        isNumeric: true,
         validate: {
-          len: [1, 5]
+          isIn: [[1, 2, 3, 4, 5]],
         }
       },
       comment: {
@@ -16,7 +17,6 @@ module.export = function(sequelize, DataTypes) {
       },
       freezeTableName: true
     });
-
     Review.associate = function(models) {
         Review.belongsTo(models.chef.id, {
           foreignKey: {
@@ -25,7 +25,7 @@ module.export = function(sequelize, DataTypes) {
         });
       };
     Review.associate = function(models) {
-        Review.belongsTo(models.user.id, {
+        Review.belongsTo(models.user, {
           foreignKey: {
             allowNull: false
           }

@@ -23,5 +23,12 @@ let User = sequelize. define("user", {
   },
   freezeTableName: true
 });
+  user.associate = function(models) {
+    user.hasMany(models.review, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 return User
 }

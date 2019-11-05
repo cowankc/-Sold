@@ -9,7 +9,7 @@ module.exports = function(app) {
         where: { 
                   name: req.params.name,
                   password: req.params.password
-                } 
+                }
       }).then(function(dbUser) {
         res.json(dbUser);
     });

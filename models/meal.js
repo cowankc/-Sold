@@ -11,20 +11,27 @@ module.export = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          min: 10 
+          min: 1 
         }
       },
       Price: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        isNumeric: true,
       },
       address: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          min: 1 
+        }
       },
       category: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+          min: 1 
+        }
       },
       freezeTableName: true
     });
