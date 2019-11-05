@@ -30,7 +30,7 @@ module.export = function(sequelize, DataTypes) {
     });
 
     Meal.associate = function(models) {
-        Meal.belongsTo(models.chef, {
+        Meal.belongsTo(models.chef.id, {
           foreignKey: {
             allowNull: false
           }
