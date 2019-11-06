@@ -19,6 +19,15 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/login", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("login", {
+        msg: "login",
+        examples: dbExamples
+      });
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
