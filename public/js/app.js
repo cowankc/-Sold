@@ -6,7 +6,19 @@ $(document).ready(function(){
         margin:10,
         autoplay:true,
         autoplayTimeout:1000,
-        autoplayHoverPause:true
+        autoplayHoverPause:true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:3,
+            },
+            600:{
+                items:3,
+            },
+            1000:{
+                items:5,
+            }
+        }
     });
     $('.play').on('click',function(){
         owl.trigger('play.owl.autoplay',[1000])
