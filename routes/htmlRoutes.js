@@ -3,8 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Meal.findAll({}).then(function(dbMeals) {
-      res.render("index", {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("homepage", {
         msg: "Welcome!",
         meals: dbMeals
       });
