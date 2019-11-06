@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "cookin_db",
+    "password": "password",
+    "database": "cookindb",
     "host": "localhost",
     "dialect": "mysql"
   },
