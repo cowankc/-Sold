@@ -14,7 +14,7 @@ module.exports = function(app) {
   app.get("/meal/:name", function(req, res) {
     db.meal.findOne({ where: { mealName: req.params.name } }).then(function(dbMeal) {
       console.log(dbMeal.dataValues);
-      res.render("user/mealpage", {
+      res.render("mealpage", {
         meal: dbMeal
       });
     });
@@ -51,6 +51,16 @@ module.exports = function(app) {
       });
     });
   });
+
+  app.get("/chef/meals/", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("chef/meals/index", {
+        msg: "meals index",
+        examples: dbExamples
+      });
+    });
+  });
+
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
