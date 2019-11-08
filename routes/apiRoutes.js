@@ -19,7 +19,7 @@ module.exports = function(app) {
         email: req.body.email,
         password: req.body.password
       }).then(function(dbUser) {
-      res.json(dbUser);
+     res.redirect('/swipe')
     });
   });
 
