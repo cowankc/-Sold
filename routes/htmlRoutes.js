@@ -28,6 +28,24 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/register", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("register", {
+        msg: "register",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/swipe", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("swipe", {
+        msg: "swipe",
+        examples: dbExamples
+      });
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

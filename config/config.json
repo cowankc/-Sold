@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "",
     "database": "cookindb",
     "host": "localhost",
     "dialect": "mysql"

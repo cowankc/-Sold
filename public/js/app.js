@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    $('.modal').modal();
+
     var owl = $('.owl-carousel');
     owl.owlCarousel({
         items:4,
