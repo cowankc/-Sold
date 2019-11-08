@@ -8,8 +8,8 @@
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "cookin_db",
+    "password": "",
+    "database": "cookindb",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
