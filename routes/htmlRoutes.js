@@ -14,7 +14,7 @@ module.exports = function(app) {
   app.get("/meal/:name", function(req, res) {
     db.meal.findOne({ where: { mealName: req.params.name } }).then(function(dbMeal) {
       console.log(dbMeal.dataValues);
-      res.render("mealpage", {
+      res.render("user/mealpage", {
         meal: dbMeal
       });
     });
@@ -22,12 +22,12 @@ module.exports = function(app) {
 
   // Route to Login Page
   app.get("/login", function(req, res) {
-    res.render("login");
+    res.render("auth/login");
   });
 
   app.get("/register", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("register", {
+      res.render("auth/register", {
         msg: "register",
         examples: dbExamples
       });
@@ -36,8 +36,17 @@ module.exports = function(app) {
 
   app.get("/swipe", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
-      res.render("swipe", {
+      res.render("user/swipe", {
         msg: "swipe",
+        examples: dbExamples
+      });
+    });
+  });
+
+  app.get("/dashboard", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("chef/dashboard", {
+        msg: "dashboard",
         examples: dbExamples
       });
     });
