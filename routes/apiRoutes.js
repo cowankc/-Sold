@@ -106,17 +106,17 @@ module.exports = function(app) {
   // Reviews
   // Get all reviews for a chef
   app.get("/api/review/chef/:chefId", function(req, res) {
-    db.review.findAll({ where: { chefId: req.params.chefId } }).then(function(dbReview) {
-      console.log(dbReview);
-      res.json(dbReview);
+    db.user_review.findAll({ where: { chefId: req.params.chefId } }).then(function(dbUser_Review) {
+      console.log(dbUser_Review);
+      res.json(dbUser_Review);
     });
   });
 
   // Get all reviews from a user
   app.get("/api/review/user/:userId", function(req, res) {
-    db.review.findAll({ where: { userId: req.params.userId } }).then(function(dbReview) {
-      console.log(dbReview);
-      res.json(dbReview);
+    db.user_review.findAll({ where: { userId: req.params.userId } }).then(function(dbUser_Review) {
+      console.log(dbUser_Review);
+      res.json(dbUser_Review);
     });
   });
 
@@ -124,14 +124,14 @@ module.exports = function(app) {
   app.post("/api/review/:userId", function(req, res) {
     console.log(req.body);
     console.log(req.params.userId);
-    db.review.create(
+    db.user_review.create(
       {
         rating: req.body.rating,
         comment: req.body.comment,
         chefId: req.body.chefId,
         userId: req.params.userId
-      }).then(function(dbReview) {
-      res.json(dbReview);
+      }).then(function(dbUser_Review) {
+      res.json(dbUser_Review);
     });
   });
 };

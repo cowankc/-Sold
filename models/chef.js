@@ -30,10 +30,8 @@ module.exports = function(sequelize, DataTypes) {
       });
     };
     Chef.associate = function(models) {
-      Chef.hasMany(models.review, {
-        foreignKey: {
-          allowNull: false
-        }
+      Chef.belongsToMany(models.user, {
+        through: 'User_Review'
       });
     };
     return Chef
