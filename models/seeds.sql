@@ -6,7 +6,7 @@ VALUES (
 'password123', 
 1);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'Cowboy Burger', 
 'https://www.tastefullysimple.com/_/media/images/recipes/cowboyburger.jpg',
@@ -16,7 +16,7 @@ VALUES (
  'American', 
  1);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'beef fajitas',
 'https://www.verywellfit.com/thmb/dm_0yG4ovnVTsbNv29FB-pjRMAo=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/fajitas-56a5c2803df78cf77289c87c.jpg',
@@ -26,7 +26,7 @@ VALUES (
 'American',
 1);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'Grilled Chicken Kabobs', 
 'https://cookinglsl.com/wp-content/uploads/2014/05/chicken-kebabs-musjrooms-4-1.jpg',
@@ -43,18 +43,18 @@ INSERT INTO users (userName, photo, email, password, chef)
 'https://i.pinimg.com/236x/c2/82/1b/c2821b08e7debf3efae71019047b3e59--carnival-dress-girls-wear.jpg',
 'gioguy@yahoo.com',
  'password123',
-  1);
+  2);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES ('Grilled Chicken Risotto', 
 'https://www.thespruceeats.com/thmb/OT9C15ZzeZETdJ6bxYCxEMIDnYc=/2500x1669/filters:fill(auto,1)/chickenrisotto2500-598cd29b6f53ba001014cb54.jpg',
 'Chicken, onions, rice, wine, chicken stock, parmesean',
 3, 
 '2504 New York Dr, Austin, TX 78702',
 'Mediterranean',
-1);
+2);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'Pasta bolognese', 
 'https://www.jocooks.com/wp-content/uploads/2018/01/spaghetti-bolognese-1-3.jpg',
@@ -62,9 +62,9 @@ VALUES (
 2, 
 '2504 New York Dr, Austin, TX 78702', 
 'Mediterranean', 
-1);
+2);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'fettuccine alfredo with Chicken', 
 'https://www.modernhoney.com/wp-content/uploads/2019/04/Chicken-Fettucine-Alfredo-6.jpg',
@@ -72,7 +72,7 @@ VALUES (
 3, 
 '2504 New York Dr, Austin, TX 78702', 
 'Mediterranean', 
-1);
+2);
 
 
 INSERT INTO users (userName, photo, email, password, chef)
@@ -83,7 +83,7 @@ INSERT INTO users (userName, photo, email, password, chef)
 'password123',
  1);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'Homemade Mac and Cheese', 
 'https://i.redd.it/5fdab7dtrck01.jpg',
@@ -91,9 +91,9 @@ VALUES (
 4, 
 '4210 Red River St #104, Austin, TX 78751', 
 'American', 
-1);
+3);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'Grilled Ribeye', 
 'https://s3-media3.fl.yelpcdn.com/bphoto/kei4HzeQOpsC5iK45A-6Uw/348s.jpg',
@@ -101,7 +101,7 @@ VALUES (
 8, 
 '4210 Red River St #104, Austin, TX 78751', 
 'American', 
-1);
+3);
 
 
 INSERT INTO users (userName, photo, email, password, chef)
@@ -112,7 +112,7 @@ INSERT INTO users (userName, photo, email, password, chef)
 'password123', 
 1);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'chicken cordon bleu', 
 'https://images.media-allrecipes.com/userphotos/4535588.jpg',
@@ -120,9 +120,9 @@ VALUES (
 4, 
 '305 W 39th St, Austin, TX 78751', 
 'European', 
-1);
+4);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'Chicken Enchilladas', 
 'https://www.theblackpeppercorn.com/wp-content/uploads/2013/08/Chicken-Enchiladas-full-angle-hires.jpg',
@@ -130,7 +130,7 @@ VALUES (
 3, 
 '305 W 39th St, Austin, TX 78751', 
 'Latin', 
-1);
+4);
 
 
 INSERT INTO users (userName, photo, email, password, chef) 
@@ -141,7 +141,7 @@ VALUES (
 'password123',
  1);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'Chicken Quesidilla', 
 'https://tatyanaseverydayfood.com/wp-content/uploads/2015/09/Chicken-Pepper-Quesadillas.jpg',
@@ -149,9 +149,9 @@ VALUES (
 3, 
 '7581 Chevy Chase Dr, Austin, TX 78752', 
 'Latin', 
-1);
+5);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'Sweet and Sour Chicken', 
 'https://www.crunchycreamysweet.com/wp-content/uploads/2018/07/sweet-and-sour-chicken-stir-fry-4.jpg',
@@ -159,9 +159,9 @@ VALUES (
 3, 
 '7581 Chevy Chase Dr, Austin, TX 78752', 
 'Latin', 
-1);
+5);
 
-INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'fish and chips', 
 'https://www.delonghi.com/Global/recipes/multifry/173.jpg',
@@ -169,7 +169,7 @@ VALUES (
 4, 
 '7581 Chevy Chase Dr, Austin, TX 78752', 
 'European', 
-1);
+5);
 
 
 INSERT INTO users (userName, photo, email, password, chef) 
@@ -180,7 +180,7 @@ VALUES (
 'password123',
  1);
 
- INSERT INTO meals (mealName, photo, ingredients, price, address, category) 
+ INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
 VALUES (
 'Buffalo Wings', 
 'https://www.thespruceeats.com/thmb/C7b0KJGGltZW99RX8I1zBTpbNto=/1500x1000/filters:fill(auto,1)/traditional-chicken-wings-912937-10-5b3f8c9ac9e77c00547241ab.jpg',
@@ -188,4 +188,23 @@ VALUES (
 3, 
 '3115 Tom Green St, Austin, TX 78705', 
 'American', 
-1);
+6);
+
+
+INSERT INTO users (userName, photo, email, password, chef) 
+VALUES (
+'Guy Fieri',
+'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/5/15/0/fnd_Guy-Fieri-Diners-Drive-Ins-Dives_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371616684348.jpeg',
+'flavormayor@yahoo.com', 
+'password123',
+ 1);
+
+ INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId) 
+VALUES (
+'Flavor Town Egg Roles', 
+'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/3/28/1/ED0101UH_Chicken-Avocado-Egg-Rolls_4x3.jpg.rend.hgtvcom.1280.960.suffix/1396271489052.jpeg',
+'Chicken, oil, lettuce, red pepper,', 
+2, 
+'601 W 11th St, Austin, TX 78701', 
+'Asian', 
+7);
