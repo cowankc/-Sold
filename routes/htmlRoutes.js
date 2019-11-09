@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all meals and Route to home page 
   app.get("/", function(req, res) {
-    db.meal.findAll({}).then(function(dbMeals) {
+    db.Meal.findAll({}).then(function(dbMeals) {
       res.render("homepage", {
         meals: dbMeals
       });
@@ -52,11 +52,21 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/chef/meals/", function(req, res) {
+  app.get("/mealpage", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
+      res.render("mealpage", {
+        msg: "mealpage",
+        examples: dbExamples
+      });
+    });
+  });
+
+
+  app.get("/chef/meals/", function(req, res) {
+    db.meal.findAll({}).then(function(dbMeals) {
       res.render("chef/meals/index", {
         msg: "meals index",
-        examples: dbExamples
+        meals: dbMeals
       });
     });
   });
