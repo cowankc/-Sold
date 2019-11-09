@@ -7,6 +7,13 @@ module.exports = function(sequelize, DataTypes) {
           min: 1
         }
       },
+      photo: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          min: 1
+        }
+      },
       ingredients: {
         type: DataTypes.STRING,
         allowNull: false,

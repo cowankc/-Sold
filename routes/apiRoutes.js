@@ -73,6 +73,7 @@ module.exports = function(app) {
     db.Meal.create(
       {
         mealName: req.body.mealName,
+        photo: req.body.photo,
         ingredients: req.body.ingredients,
         price: req.body.price,
         address: req.body.address,
@@ -91,6 +92,7 @@ module.exports = function(app) {
     db.Meal.update(
       {
         mealName: req.body.mealName,
+        photo: req.body.photo,
         ingredients: req.body.ingredients,
         price: req.body.price,
         address: req.body.address,
