@@ -4,7 +4,7 @@ module.exports = function(app) {
   // USERS
   // Get a user by username and password
   app.get("/api/user/:name/:password", function(req, res) {
-    db.user.findOne({ where: {userName: req.params.name, password: req.params.password}}).then(function(dbUser) {
+    db.User.findOne({ where: {userName: req.params.name, password: req.params.password}}).then(function(dbUser) {
       console.log(dbUser);
       res.json(dbUser);
     });
@@ -13,7 +13,7 @@ module.exports = function(app) {
   // Add a new user
   app.post("/api/user", function(req, res) {
     console.log(req.body);
-    db.user.create(
+    db.User.create(
       {
         userName: req.body.userName,
         email: req.body.email,
@@ -27,7 +27,7 @@ module.exports = function(app) {
   app.put("/api/user/:id", function(req, res) {
     console.log(req.body);
     console.log(req.params.id);
-    db.user.update(
+    db.User.update(
       { 
         userName: req.body.userName,
         email: req.body.email,
@@ -42,7 +42,7 @@ module.exports = function(app) {
   // Delete a user by id
   app.delete("/api/user/:id", function(req, res) {
     console.log(req.params.id);
-    db.user.destroy({ where: { id: req.params.id } }).then(function(dbUser) {
+    db.User.destroy({ where: { id: req.params.id } }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
@@ -114,7 +114,7 @@ module.exports = function(app) {
   // Reviews
   // Get all reviews for a chef
   app.get("/api/review/chef/:chefId", function(req, res) {
-    db.review.findAll({ where: { chefId: req.params.chefId } }).then(function(dbReview) {
+    db.Review.findAll({ where: { chefId: req.params.chefId } }).then(function(dbReview) {
       console.log(dbReview);
       res.json(dbReview);
     });
@@ -122,7 +122,7 @@ module.exports = function(app) {
 
   // Get all reviews from a user
   app.get("/api/review/user/:userId", function(req, res) {
-    db.review.findAll({ where: { userId: req.params.userId } }).then(function(dbReview) {
+    db.Review.findAll({ where: { userId: req.params.userId } }).then(function(dbReview) {
       console.log(dbReview);
       res.json(dbReview);
     });
@@ -132,7 +132,7 @@ module.exports = function(app) {
   app.post("/api/review/:userId", function(req, res) {
     console.log(req.body);
     console.log(req.params.userId);
-    db.review.create(
+    db.Review.create(
       {
         rating: req.body.rating,
         comment: req.body.comment,
