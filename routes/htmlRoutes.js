@@ -47,7 +47,7 @@ module.exports = function(app) {
     db.Meal.findAll({}).then(function(dbMeals) {
       res.render("user/swipe", {
         msg: "swipe",
-        examples: dbMeals
+        meals: dbMeals
       });
     });
   });
