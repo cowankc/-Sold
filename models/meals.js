@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Meal.associate = function(models) {
-        Meal.belongsTo(models.chef, {
+        Meal.belongsTo(models.Chef, {
           foreignKey: {
             allowNull: false
           }

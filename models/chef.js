@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let Chef = sequelize.define("chef", {
+    let Chef = sequelize.define("Chef", {
       chefName: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -23,14 +23,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
     Chef.associate = function(models) {
-      Chef.hasMany(models.meal, {
+      Chef.hasMany(models.Meal, {
         foreignKey: {
           allowNull: false
         }
       });
     };
     Chef.associate = function(models) {
-      Chef.hasMany(models.review, {
+      Chef.hasMany(models.Review, {
         foreignKey: {
           allowNull: false
         }
