@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  let User = sequelize.define("user", {
+  let User = sequelize.define("User", {
     userName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -21,11 +21,21 @@ module.exports = function(sequelize, DataTypes) {
         min: 6 
       }
     },
+    chef: {
+      type: DataTypes.BOOLEAN,
+      default: 0,
+      allowNull: false,
+    }
   });
-      User.associate = function(models) {
-        User.belongsToMany(models.chef, {
-            through: 'User_Review'
-        });
-      };
+    User.associate = function(models) {
+      User.hasMany(models.User_Review, {
+        onDelete: "cascade"
+      });
+    };
+    User.associate = function(models) {
+      User.hasMany(models.Meal, {
+        onDelete: "cascade"
+      });
+    };
     return User
     }

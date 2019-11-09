@@ -44,7 +44,7 @@ module.exports = function(app) {
   });
 
   app.get("/swipe", function(req, res) {
-    db.Meal.findAll({}).then(function(dbExamples) {
+    db.Meal.findAll({}).then(function(dbMeals) {
       res.render("user/swipe", {
         msg: "swipe",
         examples: dbMeals
