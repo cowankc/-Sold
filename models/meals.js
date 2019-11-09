@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
           min: 1
         }
       },
-      photo: {
+      Photo: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
