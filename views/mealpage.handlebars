@@ -1,20 +1,27 @@
 <head>
 
-    <style>
-        
-    #card-area{
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-    }
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    .rating{
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-    }
+    <style>
+        #card-area{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-top:10px;
+        }
+
+        #rating-area{
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        #rating-buttons{
+            padding-top:5px;
+            padding-bottom:5px;
+        }
     </style>
 
     <script>
@@ -51,38 +58,17 @@
             </div>
         </div>
 
+        <div id="rating-area">
+            <div class="row" id="rating-buttons">
+                <div class="col sm12">
+                    <a class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">thumb_up</i></a>
+                    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">thumb_down</i></a>
+            </div>
+            <div class="row" id="rating-text">
+                <h6 class="col sm12">Rate This Meal</h6>  
+            </div>     
+        </div>
+
     </main>
-
-    {{!-- <div class="rating">
-        <input type="radio" name="star" id="star1"><label for="star1">1</label>
-        <input type="radio" name="star" id="star2"><label for="star2">2</label>
-        <input type="radio" name="star" id="star3"><label for="star3">3</label>
-        <input type="radio" name="star" id="star4"><label for="star4">4</label>
-        <input type="radio" name="star" id="star5"><label for="star5">5</label>
-        TEST
-    </div> --}}
-
-  <div class="row">
-    <form class="col s12">
-    <div class="row">
-    <div class="input-field col s6">
-        <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-        <label for="first_name">First Name</label>
-    </div>
-    <div class="input-field col s6">
-        <input id="last_name" type="text" class="validate">
-        <label for="last_name">Last Name</label>
-    </div>
-    <div class="row">
-    <p>
-      <input name="group1" type="radio" id="test1" />
-      <label for="test1">Red</label>
-      <input name="group1" type="radio" id="test2" />
-      <label for="test2">Yellow</label>
-      <input class="with-gap" name="group1" type="radio" id="test3"  />
-      <label for="test3">Green</label>
-    </p>
-    </div>
-    </div>
     
 </body>
