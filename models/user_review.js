@@ -23,5 +23,12 @@ module.exports = function(sequelize, DataTypes) {
         }
       });
     };
+    User_Review.associate = function(models) {
+      User_Review.belongsTo(models.Meal, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
     return User_Review
     }

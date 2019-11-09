@@ -34,7 +34,6 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     });
-
     Meal.associate = function(models) {
         Meal.belongsTo(models.User, {
           foreignKey: {
@@ -42,6 +41,10 @@ module.exports = function(sequelize, DataTypes) {
           }
         });
       };
-      
+    Meal.associate = function(models) {
+      Meal.hasMany(models.User_Review, {
+        onDelete: "cascade"
+      });
+    }; 
     return Meal
     }
