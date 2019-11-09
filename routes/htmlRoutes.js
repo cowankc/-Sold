@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all meals and Route to home page 
   app.get("/", function(req, res) {
-    db.meal.findAll({}).then(function(dbMeals) {
+    db.Meal.findAll({}).then(function(dbMeals) {
       res.render("homepage", {
         meals: dbMeals
       });
@@ -12,7 +12,7 @@ module.exports = function(app) {
 
   // Search by meal name and route to meal page
   app.get("/meal/:name", function(req, res) {
-    db.meal.findOne({ where: { mealName: req.params.name } }).then(function(dbMeal) {
+    db.Meal.findOne({ where: { mealName: req.params.name } }).then(function(dbMeal) {
       console.log(dbMeal.dataValues);
       res.render("mealpage", {
         meal: dbMeal
@@ -35,10 +35,10 @@ module.exports = function(app) {
   });
 
   app.get("/swipe", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Meal.findAll({}).then(function(dbExamples) {
       res.render("user/swipe", {
         msg: "swipe",
-        examples: dbExamples
+        examples: dbMeals
       });
     });
   });
@@ -52,11 +52,21 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/chef/meals/", function(req, res) {
+  app.get("/mealpage", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
+      res.render("mealpage", {
+        msg: "mealpage",
+        examples: dbExamples
+      });
+    });
+  });
+
+
+  app.get("/chef/meals/", function(req, res) {
+    db.Meal.findAll({}).then(function(dbMeals) {
       res.render("chef/meals/index", {
         msg: "meals index",
-        examples: dbExamples
+        meals: dbMeals
       });
     });
   });
