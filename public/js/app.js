@@ -72,6 +72,7 @@ $(document).ready(function(){
              $('#edit_ingredients').val(data.ingredients)
              $('#edit_category').val(data.category);
              $('#edit_address').val(data.address);
+             $('#edit_photo').val(data.photo);
              $('#update-meal-btn').attr('data-id', id)
                 
              M.updateTextFields();
