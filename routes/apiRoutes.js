@@ -17,7 +17,8 @@ module.exports = function(app) {
       {
         userName: req.body.userName,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        chef: 0
       }).then(function(dbUser) {
      res.redirect('/swipe')
     });
@@ -31,7 +32,8 @@ module.exports = function(app) {
       { 
         userName: req.body.userName,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        chef: 0
       },
       { where: {id: req.params.id} }
       ).then(function(dbUser) {
@@ -65,9 +67,9 @@ module.exports = function(app) {
   });
 
   // Add a new meal
-  app.post("/api/meal/:chefId", function(req, res) {
+  app.post("/api/meal/:userId", function(req, res) {
     console.log(req.body);
-    console.log(req.params.chefId);
+    console.log(req.params.userId);
     db.Meal.create(
       {
         mealName: req.body.mealName,
@@ -75,7 +77,7 @@ module.exports = function(app) {
         price: req.body.price,
         address: req.body.address,
         category: req.body.category,
-        chefId: req.params.chefId
+        UserId: req.params.userId
       }).then(function(dbMeal) {
       // res.json(dbMeal);
       res.redirect('/chef/meals')
@@ -136,10 +138,9 @@ module.exports = function(app) {
       {
         rating: req.body.rating,
         comment: req.body.comment,
-        chefId: req.body.chefId,
         userId: req.params.userId
-      }).then(function(dbReview) {
-      res.json(dbReview);
+      }).then(function(dbUser_Review) {
+      res.json(dbUser_Review);
     });
   });
 };

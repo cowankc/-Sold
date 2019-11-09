@@ -36,11 +36,12 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Meal.associate = function(models) {
-        Meal.belongsTo(models.Chef, {
+        Meal.belongsTo(models.User, {
           foreignKey: {
             allowNull: false
           }
         });
       };
+      
     return Meal
     }
