@@ -34,6 +34,15 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/meals", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("user/mealpage", {
+        msg: "meals on meals",
+        examples: dbExamples
+      });
+    });
+  });
+
   app.get("/swipe", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("user/swipe", {
