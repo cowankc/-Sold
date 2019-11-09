@@ -34,11 +34,14 @@ $(document).ready(function(){
 
 
     //admin
-    $(document).on('click', '.delete-meal-btn', function(){
+    $("#delete-meal-confirm").on('click', function (){
         let id = $(this).data('id');
+        $("#meal_id_to_delete").val(id);
+    })
+
+    $(document).on('click', '.delete-meal-btn', function(){
+        let id =  $("#meal_id_to_delete").val();
         console.log(id)
-        var confirmText = "Are you sure you want to delete this meal?";
-        if(confirm(confirmText)) {
             $.ajax({
                 url: '/api/meal/' + id,
                 type: 'DELETE',
@@ -47,7 +50,6 @@ $(document).ready(function(){
                     location.reload();
                 }
             });
-        }
     })
 
     $(document).on('click', '.edit-meal-btn', function(){

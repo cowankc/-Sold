@@ -41,7 +41,7 @@
             <td>${{this.price}}</td>
             <td>
             <a class="btn btn-small blue sidenav-trigger white-text edit-meal-btn" data-id="{{this.id}}" href="#" data-target="slide-out-edit-meal" >Edit</a>
-            <button class="btn btn-small red delete-meal-btn" data-id="{{this.id}}" type="submit">Delete</button>
+            <button id="delete-meal-confirm" class="btn btn-small red modal-trigger" href="#delete-meal-modal" data-id="{{this.id}}" type="submit">Delete</button>
             </tr>
             {{/each}}
         </tbody>
@@ -161,3 +161,15 @@
       </div>
     </div>
   </ul>
+
+
+    <!-- Modal Structure -->
+  <div id="delete-meal-modal" class="modal">
+    <div class="modal-content">
+      <h5>Are you sure you want to delete?</h5>
+      <input id="meal_id_to_delete" class="text" value="" hidden>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat delete-meal-btn">Delete</a>
+    </div>
+  </div>
