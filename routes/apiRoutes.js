@@ -77,7 +77,7 @@ module.exports = function(app) {
         price: req.body.price,
         address: req.body.address,
         category: req.body.category,
-        userId: req.params.userId
+        UserId: req.params.userId
       }).then(function(dbMeal) {
       // res.json(dbMeal);
       res.redirect('/chef/meals')
