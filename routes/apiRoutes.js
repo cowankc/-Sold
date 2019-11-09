@@ -51,9 +51,16 @@ module.exports = function(app) {
   // MEALS
   // Get all meals
   app.get("/api/meals", function(req, res) {
-    db.meal.findAll({}).then(function(dbMeals) {
+    db.Meal.findAll({}).then(function(dbMeals) {
       console.log(dbMeals[0].dataValues);
       res.json(dbMeals);
+    });
+  });
+
+  //get only one meal
+  app.get("/api/meal/:mealId", function(req, res) {
+    db.Meal.find({ where: { id: req.params.mealId } }).then(function(dbMeal) {
+      res.json({data: dbMeal});
     });
   });
 
@@ -61,7 +68,7 @@ module.exports = function(app) {
   app.post("/api/meal/:chefId", function(req, res) {
     console.log(req.body);
     console.log(req.params.chefId);
-    db.meal.create(
+    db.Meal.create(
       {
         mealName: req.body.mealName,
         ingredients: req.body.ingredients,
@@ -70,7 +77,8 @@ module.exports = function(app) {
         category: req.body.category,
         chefId: req.params.chefId
       }).then(function(dbMeal) {
-      res.json(dbMeal);
+      // res.json(dbMeal);
+      res.redirect('/chef/meals')
     });
   });
 
@@ -78,14 +86,14 @@ module.exports = function(app) {
   app.put("/api/meal/:id", function(req, res) {
     console.log(req.body);
     console.log(req.params.id);
-    db.meal.update(
+    db.Meal.update(
       {
         mealName: req.body.mealName,
         ingredients: req.body.ingredients,
         price: req.body.price,
         address: req.body.address,
         category: req.body.category,
-        chefId: req.body.chefId 
+        // chefId: req.body.chefId 
       },
       {
         where: { id: req.params.id } }
@@ -97,7 +105,7 @@ module.exports = function(app) {
   // Delete a meal by id
   app.delete("/api/meal/:id", function(req, res) {
     console.log(req.params.id);
-    db.meal.destroy({ where: { id: req.params.id } }).then(function(dbMeal) {
+    db.Meal.destroy({ where: { id: req.params.id } }).then(function(dbMeal) {
       res.json(dbMeal);
     });
   });
