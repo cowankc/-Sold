@@ -153,31 +153,13 @@ main {
   </div>
 
   <div class="swiper--cards">
-    <div class="swiper--card">
-      <img src="https://i.pinimg.com/originals/f9/db/f7/f9dbf7234e15f38232261ca829567fc4.jpg">
-      <h3>Name of Food</h3>
-      <p>Description of dish goes here</p>
-    </div>
-    <div class="swiper--card">
-      <img src="https://www.yellowblissroad.com/wp-content/uploads/2018/01/Pozole-Rojo-with-Chicken-fb.jpg">
-     <h3>Name of Food</h3>
-      <p>Description of dish goes here</p>
-    </div>
-    <div class="swiper--card">
-      <img src="https://thekenshen.com/wp-content/uploads/2014/06/10401860_802662226434019_1340455043_n.jpg">
-      <h3>Name of Food</h3>
-      <p>Description of dish goes here</p>
-    </div>
-    <div class="swiper--card">
-      <img src="https://www.tasteofhome.com/wp-content/uploads/2018/01/Chicken-Tamales_EXPS_HC17_50905_C12_16_2b-1-696x696.jpg">
-      <h3>Name of Food</h3>
-      <p>Description of dish goes here</p>
-    </div>
-    <div class="swiper--card">
-      <img src="https://bloximages.chicago2.vip.townnews.com/tucson.com/content/tncms/assets/v3/editorial/5/f3/5f3ff1d6-be03-11e9-b639-1bbb6036e3b6/5d53144be91f8.image.jpg?crop=1250%2C1250%2C204%2C0&resize=1250%2C1250&order=crop%2Cresize">
-      <h3>Name of Food</h3>
-      <p>Description of dish goes here</p>
-    </div>
+      {{#each meals}}
+      <div class="swiper--card">
+      <img src="{{this.photo}}">
+      <h3>{{this.mealName}}</h3>
+      <p>{{this.category}} | ${{this.price}}</p>
+      </div>
+      {{/each}}
   </div>
 
   <div class="swiper--buttons">
