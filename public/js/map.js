@@ -1,14 +1,14 @@
-// CLIENT ID
-// 3COBHNICUXXIV44MKEL3LNAPPGXKSVHDJPBW1QXFWNLJ3ESA
-// CLIENT SECRET
-// SMY5SEPCENFFCDHR22ZKZR4ISS4QRRNYRNOK1LWTM5H4GRIO
-let axios = require("axios");
-let date = "20191107"
-let location = "austin"
-let clientId = "3COBHNICUXXIV44MKEL3LNAPPGXKSVHDJPBW1QXFWNLJ3ESA";
-let clientSecret = "SMY5SEPCENFFCDHR22ZKZR4ISS4QRRNYRNOK1LWTM5H4GRIO";
-let queryURL = "https://api.foursquare.com/v2/venues/search?near=" + location + '&client_id=' + clientId + '&client_secret=' + clientSecret + "&v=" + date
+// key
+// AIzaSyBWQ-sFtacE3m0IMYrFlP7w_dgNQpL-bBw
 
-axios.get(queryURL).then(function(response) {
-    console.log(response.data);
-  });
+function initMap () {
+  let options = {
+    zoom: 8,
+    center: {lat:30.2672, lng:97.7431}
+  }
+
+  let map = new google.maps.Map(document.getElementById('map'),options);
+}
+  // let marker = google.maps.Marker({
+  //   psoition: kitchen,
+  //   map: map

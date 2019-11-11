@@ -41,6 +41,7 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     });
+
     Meal.associate = function(models) {
         Meal.belongsTo(models.User, {
           foreignKey: {
@@ -53,5 +54,24 @@ module.exports = function(sequelize, DataTypes) {
         onDelete: "cascade"
       });
     }; 
+
     return Meal
-    }
+
+    ("#add.to.cart").onclick = function(){
+      // add Meal to cart
+      //$(Meal).appendTo(#cart)
+      console.log("added to cart")
+    };
+  }
+
+  ("#like").onclick = function(){
+    //save to ratings
+    likeCount ++;
+    totalLikes ++;
+  };
+
+  ("#dislike").onclick = function(){
+    //save to ratings
+    likeCount --;
+    totalLikes ++;
+  };

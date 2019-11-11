@@ -141,14 +141,14 @@ module.exports = function(app) {
       {
         rating: req.body.rating,
         comment: req.body.comment,
-        userId: req.params.userId
+        UserId: req.params.userId
       }).then(function(dbUser_Review) {
       res.json(dbUser_Review);
       db.User.update(
         { 
           chefRating: db.User.chefRating + db.Review.rating
         },
-        { where: {id: req.params.id} }
+        { where: {id: db.meals.userId} }
         )
     });
   });

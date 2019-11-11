@@ -44,7 +44,11 @@ module.exports = function(app) {
   });
 
   app.get("/swipe", function(req, res) {
-    db.Meal.findAll({}).then(function(dbMeals) {
+    db.User.findAll({
+      include: [{
+       model: db.Meal
+  }]
+    }).then(function(dbMeals) {
       res.render("user/swipe", {
         msg: "swipe",
         meals: dbMeals
