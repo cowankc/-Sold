@@ -7,6 +7,13 @@ module.exports = function(sequelize, DataTypes) {
         min: 1
       }
     },
+    Photo: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate: {
+        min: 1 
+      }
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -25,6 +32,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       default: 0,
       allowNull: false,
+    },
+    chefRating: {
+      type: DataTypes.INTEGER,
+      default: 0 
     }
   });
     User.associate = function(models) {

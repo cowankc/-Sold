@@ -4,8 +4,8 @@
             <div class="col m3 s12">
                     <div class="card">
             <div class="card-image">
-            <img src="https://www.independent.ie/incoming/article35010156.ece/ALTERNATES/h342/iw%20IMG_9611_2.jpg">
-            <span class="card-title">Hi, Jannet</span>
+            <img src="https://lumiere-a.akamaihd.net/v1/images/open-uri20150422-20810-f3qxzs_4923c203.jpeg?region=0,0,600,600&width=320">
+            <span class="card-title">Hi, Remy</span>
             </div>
             <div class="card-content">
                 <p>Rating: <span class="fa fa-star checked"></span>
@@ -26,9 +26,10 @@
                   <table>
         <thead>
           <tr>
+              <th></th>
               <th>Name</th>
               <th>Category</th>
-              <th>Item Price</th>
+              <th>Price</th>
               <th></th>
           </tr>
         </thead>
@@ -36,12 +37,13 @@
         <tbody>
             {{#each meals}}
             <tr>
+            <td><img src="{{this.photo}}" width="100px"></td>
             <td>{{this.mealName}}</td>
             <td>{{this.category}}</td>
             <td>${{this.price}}</td>
             <td>
-            <a class="btn btn-small blue sidenav-trigger white-text edit-meal-btn" data-id="{{this.id}}" href="#" data-target="slide-out-edit-meal" >Edit</a>
-            <button id="delete-meal-confirm" class="btn btn-small red modal-trigger" href="#delete-meal-modal" data-id="{{this.id}}" type="submit">Delete</button>
+            <a class="btn btn-small blue sidenav-trigger white-text edit-meal-btn btn-sm-action" data-id="{{this.id}}" href="#" data-target="slide-out-edit-meal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+            <button id="delete-meal-confirm" class="btn btn-small red modal-trigger btn-sm-action" href="#delete-meal-modal" data-id="{{this.id}}" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
             </tr>
             {{/each}}
         </tbody>
@@ -91,6 +93,11 @@
                     <input name="ingredients" id="ingredients" type="text" class="validate">
                     <label for="ingredients">Ingredients (seperate by comma)</label>
                     </div>
+                 <div class="input-field col s12">
+                    <i class="material-icons prefix">add_a_photo</i>
+                    <input name="photo" id="photo" type="text" class="validate">
+                    <label for="photo">Photo (URL)</label>
+                </div>
                 <div class="input-field col s12">
                     <select id="address" name="address">
                     <option value="" disabled>Select Pickup Address</option>
@@ -143,7 +150,12 @@
                     <i class="material-icons prefix">list</i>
                     <input name="ingredients" id="edit_ingredients" type="text" class="validate">
                     <label for="ingredients">Ingredients (seperate by comma)</label>
-                    </div>
+                </div>
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">add_a_photo</i>
+                    <input name="photo" id="edit_photo" type="text" class="validate">
+                    <label for="photo">Photo (URL)</label>
+                </div>
                 <div class="input-field col s12">
                     <select id="edit_address" name="address">
                     <option value="" disabled>Select Pickup Address</option>
@@ -170,6 +182,7 @@
       <input id="meal_id_to_delete" class="text" value="" hidden>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat delete-meal-btn">Delete</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a href="#!" class="modal-close waves-effect waves-green  btn-small red delete-meal-btn">Delete</a>
     </div>
   </div>

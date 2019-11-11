@@ -33,7 +33,8 @@ module.exports = function(app) {
         userName: req.body.userName,
         email: req.body.email,
         password: req.body.password,
-        chef: 0
+        chef: 0,
+        chefRating: 0
       },
       { where: {id: req.params.id} }
       ).then(function(dbUser) {
@@ -143,6 +144,12 @@ module.exports = function(app) {
         userId: req.params.userId
       }).then(function(dbUser_Review) {
       res.json(dbUser_Review);
+      db.User.update(
+        { 
+          chefRating: db.User.chefRating + db.Review.rating
+        },
+        { where: {id: req.params.id} }
+        )
     });
   });
 };
