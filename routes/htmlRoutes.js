@@ -49,9 +49,14 @@ module.exports = function(app) {
        model: db.Meal
   }]
     }).then(function(dbMeals) {
+      console.log(dbMeals[0].dataValues.Meals[0].dataValues)
       res.render("user/swipe", {
         msg: "swipe",
-        meals: dbMeals
+        meals: dbMeals[0].dataValues.Meals[0],
+        mealPhotos: dbMeals[0].dataValues.Meals[0].dataValues.photo,
+        mealName: dbMeals[0].dataValues.Meals[0].dataValues.mealName,
+        mealsCategory: dbMeals[0].dataValues.Meals[0].dataValues.category,
+        mealPrice: dbMeals[0].dataValues.Meals[0].dataValues.price,
       });
     });
   });

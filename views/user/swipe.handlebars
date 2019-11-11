@@ -155,9 +155,9 @@ main {
   <div class="swiper--cards">
       {{#each meals}}
       <div class="swiper--card">
-      <img src="{{this.meals.photo}}">
-      <h3>{{this.meals.mealName}}</h3>
-      <p>{{this.meals.category}} | ${{this.meals.price}}</p>
+      <img src="{{mealPhotos}}">
+      <h3>{{mealName}}</h3>
+      <p>{{mealsCategory}} | ${{mealPrice}}</p>
       </div>
       {{/each}}
   </div>
