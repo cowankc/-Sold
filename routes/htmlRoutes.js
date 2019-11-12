@@ -70,6 +70,15 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/cart", function(req, res) {
+    db.Example.findAll({}).then(function(dbExamples) {
+      res.render("cart", {
+        msg: "this is the shopping cart page",
+        examples: dbExamples
+      });
+    });
+  });
+
   app.get("/mealpage", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("mealpage", {
