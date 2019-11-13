@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         min: 1
       }
     },
-    Photo: {
+    photo: {
       type: DataTypes.STRING,
       allowNull: true,
       validate: {
@@ -36,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     chefRating: {
       type: DataTypes.INTEGER,
       default: 0 
-    }
+    },
   });
     User.associate = function(models) {
       User.hasMany(models.User_Review, {
@@ -47,6 +47,7 @@ module.exports = function(sequelize, DataTypes) {
       User.hasMany(models.Meal, {
         onDelete: "cascade"
       });
+
     };
     return User
     }
