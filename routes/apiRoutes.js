@@ -28,7 +28,7 @@ module.exports = function(app) {
         result.error = 'Authentication error';
       }
 
-      res.json({success: isSuccess, data: result});
+      res.json({success: isSuccess, data: result, chef: dbUser.dataValues.chef});
     })
     .catch(function(err) {
       isSuccess = false;
