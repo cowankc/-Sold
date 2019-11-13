@@ -61,9 +61,17 @@ $(document).ready(function(){
                 // Store to LocalStorage
                 localStorage.setItem(response.data.id, response.data.token);
                 let token = localStorage.getItem(response.data.id);
-                window.location.href = "/swipe";
+                //checks to see if user is chef in db, if they are they go to chef page, if not they go to swipe page
+                if(response.chef){
+                    window.location.href = "/chef/meals";
+                }else{
+                    window.location.href = "/swipe";
+                }
             }
-            else{}
+            else{
+                console.log('username and password do not match')
+                $('#validation').html('The email and password combination does not exist.')
+            }
         })
     });
 
