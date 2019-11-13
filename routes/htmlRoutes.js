@@ -1,9 +1,11 @@
 var db = require("../models");
+//needed for random
+var Sequelize = require('sequelize');
 
 module.exports = function(app) {
   // Get all meals and Route to home page 
   app.get("/", function(req, res) {
-    db.Meal.findAll({}).then(function(dbMeals) {
+    db.Meal.findAll({ order: Sequelize.literal('rand()') }).then(function(dbMeals) {
       res.render("homepage", {
         meals: dbMeals
       });
@@ -44,25 +46,25 @@ module.exports = function(app) {
   });
 
   app.get("/swipe", function(req, res) {
-    db.User.findAll({
-      include: [{
-       model: db.Meal
-  }]
+    db.Meal.findAll({ order: Sequelize.literal('rand()')}).then(function(dbMeals) {
+      return dbMeals 
+    }).then(function(dbMeals){
+      const promises = dbMeals.map(async function (dbMeal){
+        const user = await db.User.findOne({ where: { id: dbMeal.UserId }}) 
+        return {...dbMeal, user}
+      })
+      return Promise.all(promises)
     }).then(function(dbMeals) {
-      console.log(dbMeals[0].dataValues.Meals[0].dataValues)
       res.render("user/swipe", {
         msg: "swipe",
-        meals: dbMeals[0].dataValues.Meals[0],
-        mealPhotos: dbMeals[0].dataValues.Meals[0].dataValues.photo,
-        mealName: dbMeals[0].dataValues.Meals[0].dataValues.mealName,
-        mealsCategory: dbMeals[0].dataValues.Meals[0].dataValues.category,
-        mealPrice: dbMeals[0].dataValues.Meals[0].dataValues.price,
+        meals: dbMeals,
       });
-    });
+      console.log(dbMeals);
+    })
   });
 
   app.get("/dashboard", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Example.findAll().then(function(dbExamples) {
       res.render("chef/dashboard", {
         msg: "dashboard",
         examples: dbExamples

@@ -32,6 +32,40 @@ $(document).ready(function(){
     })
 
 
+    // $(document).on('click', '.reg-user-btn', function(){
+    //     $.ajax({
+    //         url : '/api/user',
+    //         type : 'POST',
+    //         data : {userName: $('#userName').val(), email: $('#email').val(), password:$('#password').val()},
+    //         dataType : 'JSON',
+    //         success : function(response){
+    //             console.log(response.data);
+    //             // Store to LocalStorage
+    //             // localStorage.setItem(response.data.id, response.sdata.token);
+    //             // let token = localStorage.getItem(userId);
+    //             // var verify = jwt.verify(token, userId);
+    //             // var decoded = jwt.decode(token);
+    //         }
+    //     });
+    // })
+
+    $(document).on('click', '.login-btn', function(e){
+        e.preventDefault();
+        $.ajax({
+            url : '/api/user/' + $('#email').val() + '/' + $('#password').val(),
+            type: "POST"
+        }).then(function(response){
+            console.log(response);
+
+            if (response.success) {
+                // Store to LocalStorage
+                localStorage.setItem(response.data.id, response.data.token);
+                let token = localStorage.getItem(response.data.id);
+                window.location.href = "/swipe";
+            }
+            else{}
+        })
+    });
 
     //admin
     $("#delete-meal-confirm").on('click', function (){
@@ -100,6 +134,4 @@ $(document).ready(function(){
             }
         );
     })
-
-
-  });
+});
