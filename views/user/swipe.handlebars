@@ -144,7 +144,6 @@ main {
 
 </style>
 <main>
-<center>
 
 <div class="swiper">
   <div class="swiper--status">
@@ -153,13 +152,19 @@ main {
   </div>
 
   <div class="swiper--cards">
+    
       {{#each meals}}
       <div class="swiper--card">
-      <img src="{{mealPhotos}}">
-      <h3>{{mealName}}</h3>
-      <p>{{mealsCategory}} | ${{mealPrice}}</p>
-      </div>
-      {{/each}}
+      <img src="{{this.dataValues.photo}}">
+      <h3>{{this.dataValues.mealName}}</h3>
+ <p style="text-align:left;">
+    <img src="{{this.user.Photo}}" class="responsive-img circle"  width="25px">{{this.user.userName}}
+    <span style="float:right; font-size: 20px; font-weight: 400"><i class="fa fa-usd" aria-hidden="true"></i>
+{{this.dataValues.price}}</span>
+    </p>
+    <p>{{this.dataValues.category}}</p>
+    </div>
+    {{/each}}
   </div>
 
   <div class="swiper--buttons">
@@ -167,6 +172,5 @@ main {
     <button id="love"><i class="fa fa-heart"></i></button>
   </div>
 </div>
-</center>
 </main>
 
