@@ -1,18 +1,47 @@
 var db = require("../models");
+var jwt = require("../public/js/verification.js");
 
 module.exports = function(app) {
   // USERS
   // Get a user by username and password
-  app.get("/api/user/:name/:password", function(req, res) {
-    db.User.findOne({ where: {userName: req.params.name, password: req.params.password}}).then(function(dbUser) {
-      console.log(dbUser);
-      res.json(dbUser);
-    });
+  app.post("/api/user/:email/:password", function(req, res) {
+    let result = {};
+    let isSuccess = false;
+
+    db.User.findOne({ where: {email: req.params.email, password: req.params.password}})
+    .then(function(dbUser) {
+
+      if (dbUser !== null){
+
+        //Get authorization token
+        var token = jwt.sign(dbUser.dataValues.id);
+
+        //Return token
+        isSuccess = true;
+        result.status = 200;
+        result.id = dbUser.dataValues.id;
+        result.token = token;
+      }
+      else {
+        isSuccess = false;
+        result.status = 401;
+        result.error = 'Authentication error';
+      }
+
+      res.json({success: isSuccess, data: result});
+    })
+    .catch(function(err) {
+      isSuccess = false;
+      result.status = 404;
+      result.error = err;
+      res.json({success: isSuccess, data: result});
+    })
   });
 
   // Add a new user
   app.post("/api/user", function(req, res) {
-    console.log(req.body);
+    let result = {};
+
     db.User.create(
       {
         userName: req.body.userName,
@@ -20,7 +49,17 @@ module.exports = function(app) {
         password: req.body.password,
         chef: 0
       }).then(function(dbUser) {
-     res.redirect('/swipe')
+        //Get Authorization Token
+        // var token = jwt.sign(dbUser.dataValues.id);
+
+        // //Return token
+        // result.status = 200;
+        // result.id = dbUser.dataValues.id;
+        // result.token = token;
+
+        // res.json({success: true, data: result});
+
+        res.redirect('/swipe')
     });
   });
 
