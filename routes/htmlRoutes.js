@@ -13,11 +13,16 @@ module.exports = function(app) {
   });
 
   // Search by meal name and route to meal page
-  app.get("/meal/:name", function(req, res) {
-    db.Meal.findOne({ where: { mealName: req.params.name } }).then(function(dbMeal) {
+  app.get("/meal/:id", function(req, res) {
+    db.Meal.findOne({ where: { id: req.params.id } }).then(function(dbMeal) {
       console.log(dbMeal.dataValues);
+ 
+      let ingredients = dbMeal.ingredients;
+      let split = ingredients.split(",")
+      
       res.render("mealpage", {
-        meal: dbMeal
+        meal: dbMeal,
+        ingredients: split
       });
     });
   });

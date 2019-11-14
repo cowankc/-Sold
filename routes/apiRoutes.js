@@ -41,13 +41,18 @@ module.exports = function(app) {
   // Add a new user
   app.post("/api/user", function(req, res) {
     let result = {};
+    let isChef = 0;
+
+    if(req.body.chef){
+      isChef = 1;
+    }
 
     db.User.create(
       {
         userName: req.body.userName,
         email: req.body.email,
         password: req.body.password,
-        chef: 0
+        chef: isChef
       }).then(function(dbUser) {
         //Get Authorization Token
         // var token = jwt.sign(dbUser.dataValues.id);
@@ -58,8 +63,11 @@ module.exports = function(app) {
         // result.token = token;
 
         // res.json({success: true, data: result});
-
-        res.redirect('/swipe')
+        if(isChef){
+          res.redirect('/chef/meals')
+        }else{
+          res.redirect('/swipe')
+        }
     });
   });
 

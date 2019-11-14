@@ -46,7 +46,7 @@
           <div class="owl-carousel">
                   {{#each meals}}
                     <div>
-                      <img src="{{this.photo}}" width="200">
+                      <img src="{{this.photo}}" class="carousel-img">
                       <h5>{{this.mealName}}</h5>
                     </div>
                   {{/each}}
@@ -56,3 +56,16 @@
 
     </div>
   </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h4 class="header col s12 light">Are you a great cook?</h4>
+          <a href="/register?chef=checked" class="btn red">Sign up as Chef</a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/images/chef-background.jpg" alt="Unsplashed background img 3" style="opacity: 1; transform: translate3d(-50%, 221.749px, 0px);"></div>
+  </div>
+
