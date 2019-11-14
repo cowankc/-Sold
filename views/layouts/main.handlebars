@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>What's Cookin'</title>
+  <script>
+    function logout() {
+        localStorage.clear();
+        window.location.href = "/";
+    }
+  </script>
 </head>
 
 <body  data-enhance="false">
@@ -18,9 +24,8 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="/" class="brand-logo"><img src="/images/logo.png" width="140"></a>
       <ul class="right hide-on-med-and-down">
-     
        <li><a href="/login">Login</a></li>
-
+       <li><a href="javascript:logout();">Logout</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">

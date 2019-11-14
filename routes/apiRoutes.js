@@ -13,8 +13,6 @@ module.exports = function(app) {
 
       //Verify token
       var verify = jwt.verify(token);
-      console.log("im here");
-      console.log(verify);
 
       if (verify) {
         //Decode token
