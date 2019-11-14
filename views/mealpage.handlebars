@@ -64,15 +64,17 @@
                 <div class="card">
                     <div class="card-image">
                         <img src="/images/pasta.jpeg">
-                        <span class="card-title">TEST NAME</span>
+                        <span class="card-title">{{meal.mealName}}</span>
                         <a class="btn-floating halfway-fab waves-effect waves-light red" id="add-to-cart"><i class="material-icons">add_shopping_cart</i></a>
                     </div>
                     <div class="card-content">
                         <h6 style="text-align: left">Primary Ingredients:</h6>
                         <ol>
-                            <li> </li>
-                            <li> </li>
-                            <li> </li>
+                            {{#each ingredients}}
+                            <li>{{ingredient}}</li>
+                            <li>{{ingredient}}</li>
+                            <li>{{ingredient}}</li>
+                            {{/each}}
                         </ol>
                     </div>
                 </div>

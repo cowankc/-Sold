@@ -52,7 +52,7 @@ INSERT INTO users (userName, photo, email, password, chef, chefRating, createdAt
 'https://i.pinimg.com/236x/c2/82/1b/c2821b08e7debf3efae71019047b3e59--carnival-dress-girls-wear.jpg',
 'gioguy@yahoo.com',
 'password123',
-2,
+1,
 0,
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
