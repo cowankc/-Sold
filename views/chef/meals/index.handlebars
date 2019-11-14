@@ -28,7 +28,7 @@
           <tr>
               <th></th>
               <th>Name</th>
-              <th>Category</th>
+              <th class="hide-on-small-only">Category</th>
               <th>Price</th>
               <th></th>
           </tr>
@@ -39,7 +39,7 @@
             <tr>
             <td><img src="{{this.photo}}" width="100px"></td>
             <td>{{this.mealName}}</td>
-            <td>{{this.category}}</td>
+            <td class="hide-on-small-only">{{this.category}}</td>
             <td>${{this.price}}</td>
             <td>
             <a class="btn btn-small blue sidenav-trigger white-text edit-meal-btn btn-sm-action" data-id="{{this.id}}" href="#" data-target="slide-out-edit-meal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
