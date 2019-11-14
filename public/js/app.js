@@ -70,6 +70,8 @@ $(document).ready(function(){
             }
             else{
                 console.log('username and password do not match')
+                $('#email').addClass('invalid')
+                $('#password').addClass('invalid')
                 $('#validation').html('The email and password combination does not exist.')
             }
         })
@@ -142,4 +144,5 @@ $(document).ready(function(){
             }
         );
     })
+
 });
