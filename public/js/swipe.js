@@ -17,7 +17,11 @@ function initCards(card, index) {
   
 }
 
-initCards();
+if(swiperContainer == null){
+
+}else{
+  initCards();
+}
 
 allCards.forEach(function (el) {
   var hammertime = new Hammer(el);
@@ -105,8 +109,12 @@ var loveListener = createButtonListener(true);
 
 
 
-nope.addEventListener('click', nopeListener);
-love.addEventListener('click', loveListener);
+if(swiperContainer == null){
+  
+}else{
+  nope.addEventListener('click', nopeListener);
+  love.addEventListener('click', loveListener);
+}
 
 
 function swipeleft(){
