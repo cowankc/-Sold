@@ -20,7 +20,15 @@
 
         #rating-buttons{
             padding-top:5px;
-            padding-bottom:5px;
+        }
+
+        a {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding-bottom: 10px;
+            font-size: 15px;
         }
     </style>
 
@@ -86,5 +94,12 @@
     </div>
 
 </main>
+
+<div id="return-to-swiping">
+    <a href="/swipe"><i class="material-icons">subdirectory_arrow_left</i>Swipe Again</a>
+    {{!-- <div class="row" id="return-swipe-text">
+        <a href="/swipe">Return to Swiping</a></li>      
+    </div>      --}}
+</div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
