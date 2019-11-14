@@ -2,6 +2,51 @@ var db = require("../models");
 var jwt = require("../public/js/verification.js");
 
 module.exports = function(app) {
+  // VERIFICATION
+  // Get a user id by token
+  app.post("/api/verify/:token", function(req, res) {
+    let result = {};
+    let isSuccess = false;
+    let token = req.params.token;
+
+    if (token !== null){
+
+      //Verify token
+      var verify = jwt.verify(token);
+      console.log("im here");
+      console.log(verify);
+
+      if (verify) {
+        //Decode token
+        var decoded = jwt.decode(token);
+
+        if (decoded !== null) {
+          //Return token
+          isSuccess = true;
+          result.status = 200;
+          result.userId = decoded.payload.userId;
+        }
+        else {
+          isSuccess = false;
+          result.status = 401;
+          result.error = 'Authentication error';
+        }
+      }
+      else {
+        isSuccess = false;
+        result.status = 401;
+        result.error = 'Authentication error';
+      }
+    }
+    else {
+      isSuccess = false;
+      result.status = 401;
+      result.error = 'Authentication error';
+    }
+
+    res.json({success: isSuccess, data: result});
+  });
+
   // USERS
   // Get a user by username and password
   app.post("/api/user/:email/:password", function(req, res) {

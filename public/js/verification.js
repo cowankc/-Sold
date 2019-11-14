@@ -15,7 +15,7 @@ module.exports = {
         // Token signing options
         var signOptions = {
             issuer:  "Whats Cookin",
-            expiresIn:  "1h",    // 1 hour validity
+            expiresIn:  "24h",    // 24 hour validity
             algorithm:  "RS256"    
         };
 
@@ -23,10 +23,10 @@ module.exports = {
         return token;
     },
 
-    verify: (token,userId) => {
+    verify: (token) => {
         var verifyOptions = {
             issuer:  "Whats Cookin",
-            expiresIn:  "1h",
+            expiresIn:  "24h",
             algorithm:  ["RS256"]
         };
 
