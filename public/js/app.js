@@ -59,8 +59,10 @@ $(document).ready(function(){
 
             if (response.success) {
                 // Store to LocalStorage
-                localStorage.setItem(response.data.id, response.data.token);
-                let token = localStorage.getItem(response.data.id);
+                localStorage.clear();
+                localStorage.setItem("token", response.data.token);
+                let token = localStorage.getItem("token");
+                console.log(token);
                 //checks to see if user is chef in db, if they are they go to chef page, if not they go to swipe page
                 if(response.chef){
                     window.location.href = "/chef/meals";
@@ -96,13 +98,38 @@ $(document).ready(function(){
             });
     })
 
-    $(document).on('click', '.edit-meal-btn', function(){
+    $(document).on('click', '.edit-meal-btn', function(e){
+        e.preventDefault();
         let id = $(this).data('id');
         console.log(id)
-       getMealDetails(id);
+
+        //Get from LocalStorage
+        let token = localStorage.getItem("token");
+        
+        $.ajax({
+            url : '/api/verify/' + token,
+            type: "POST"
+        }).then(function(response){
+            console.log(response);
+
+            if (response.success) {
+                // Get user id
+                userId = response.data.userId;
+
+                if (userId !== undefined) {
+                    getMealDetails(id);
+                }
+                else {
+                    window.location.href = "/login";
+                }
+            }
+            else{
+                window.location.href = "/login";
+            }
+        });
     })
 
-
+    
     function getMealDetails(id) {
         $.ajax({
             url: "/api/meal/" + id,
