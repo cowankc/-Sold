@@ -6,6 +6,12 @@
  * Made By MaterializeCSS.com
  */
 
+ #map {
+   width: 35vw;
+   height: 35vh;
+   border: 2px solid black;
+ }
+
  nav ul a,
  nav .brand-logo {
    color: #444;
