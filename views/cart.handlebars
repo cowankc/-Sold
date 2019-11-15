@@ -1,60 +1,50 @@
 <head>
 
+    <style>
+        #cart-area{
+            max-width: 80%;
+            margin: auto;
+            padding:10px;
+            text-align: center;
+        }
+    </style>
+
     <script>
-        $( window ).load(function() {
-        doShowAll();
-        });
-
-        function SaveItem() {
-        var name = $("#name").val();
-        var data = $("#data").val();
-        localStorage.setItem(name, data);
-        doShowAll();
-        }
-
-        function ModifyItem() {
-        var name1 = $("#name").val();
-        var data1 = $("#data").val();
-        //Check if name already exists.
-        //Check if key exists.
-        if (localStorage.getItem(name1) !=null) {
-            //update
-            localStorage.setItem(name1,data1);
-            var new_info=localStorage.getItem(name1);
-            $("#data").val(new_info);
-            }
-            doShowAll();
-        }
-
-        function RemoveItem()
-        {
-        var name=document.forms.ShoppingList.name.value;
-        document.forms.ShoppingList.data.value=localStorage.removeItem(name);
-        doShowAll();
-        }
-
+        {{!-- test --}}
     </script>
 
 </head>
 
 <main>
-    <form name="ShoppingList">
-        <fieldset>
-            <legend>Shopping cart</legend>
-            <label>Item: <input type="text" name="name"></label>
-            <label>Quantity: <input type="text" name="data"></label>
-
-            <input type="button" value="Save"   onclick="SaveItem()">
-            <input type="button" value="Update" onclick="ModifyItem()">
-            <input type="button" value="Delete" onclick="RemoveItem()">
-        </fieldset>
-        <div id="items_table">
-            <h2>Shopping List</h2>
-            <table id="list"></table>
-            <label><input type="button" value="Clear" onclick="ClearAll()">
-            * Delete all items</label>
+    <div id="cart-area"></div>
+        <div class="row">
+            <h5 class="col sm8">Shopping Cart</h5>
         </div>
-    </form>
+        <div class="row">
+        <table>
+            <thead>
+            <tr>
+                <th></th>
+                <th>Item</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#each meals}}
+                <tr>
+                <td><img src="{{this.photo}}" width="100px"></td>
+                <td>{{this.mealName}}</td>
+                <td>${{this.price}}</td>
+                <td>
+                <a class="btn btn-small blue sidenav-trigger white-text edit-meal-btn btn-sm-action" data-id="{{this.id}}" href="#" data-target="slide-out-edit-meal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                <button id="delete-meal-confirm" class="btn btn-small red modal-trigger btn-sm-action" href="#delete-meal-modal" data-id="{{this.id}}" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+        </div>
+    </div>
 </main>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
