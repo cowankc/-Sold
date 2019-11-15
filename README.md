@@ -1,6 +1,6 @@
 # Project 2
 
-![alt text](https://github.com/XXX "Logo")
+![alt text](https://github.com/cowankc/whatsCookin/blob/master/public/images/logo.png "Logo")
 
 ##What's Cookin'
 
@@ -106,4 +106,4 @@
 
 ## Visual Overview 
 
-![alt text](https://github.com/XXX "Logo")
+![alt text](https://github.com/cowankc/whatsCookin/blob/master/public/images/flow.png "Logo")
