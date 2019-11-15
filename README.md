@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/cowankc/whatsCookin/blob/master/public/images/logo.png "Logo")
 
-##What's Cookin'
+## What's Cookin'
 
  - [x] Requirements
 
@@ -106,4 +106,4 @@
 
 ## Visual Overview 
 
-![alt text](https://github.com/cowankc/whatsCookin/blob/master/public/images/flow.png "Logo")
+![alt text](https://github.com/cowankc/whatsCookin/blob/master/public/images/flow.png "flow")
