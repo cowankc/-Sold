@@ -95,7 +95,6 @@ module.exports = function(app) {
     });
   });
 
-
   app.get("/chef/meals/", function(req, res) {
     db.Meal.findAll({}).then(function(dbMeals) {
       res.render("chef/meals/index", {
