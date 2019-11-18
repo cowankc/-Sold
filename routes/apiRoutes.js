@@ -107,7 +107,7 @@ module.exports = function(app) {
 
         // res.json({success: true, data: result});
         if(isChef){
-          res.redirect('/chef/meals')
+          res.redirect('/chef/meals/:email')
         }else{
           res.redirect('/swipe')
         }
@@ -160,7 +160,7 @@ module.exports = function(app) {
   // Add a new meal
   app.post("/api/meal/:userId", function(req, res) {
     console.log(req.body);
-    console.log(req.params.userId);
+    console.log(req.params.email);
     db.Meal.create(
       {
         mealName: req.body.mealName,
@@ -169,10 +169,10 @@ module.exports = function(app) {
         price: req.body.price,
         address: req.body.address,
         category: req.body.category,
-        UserId: req.params.userId
+        UserId: req.body.id
       }).then(function(dbMeal) {
       // res.json(dbMeal);
-      res.redirect('/chef/meals')
+      res.redirect('/chef/meals/:email')
     });
   });
 

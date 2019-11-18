@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $('.modal').modal();
     $('.sidenav-right').sidenav( {edge: 'right'});
@@ -56,7 +57,6 @@ $(document).ready(function(){
             type: "POST"
         }).then(function(response){
             console.log(response);
-
             if (response.success) {
                 // Store to LocalStorage
                 localStorage.clear();
@@ -65,7 +65,7 @@ $(document).ready(function(){
                 console.log(token);
                 //checks to see if user is chef in db, if they are they go to chef page, if not they go to swipe page
                 if(response.chef){
-                    window.location.href = "/chef/meals";
+                    window.location.href = "/chef/meals/" + $('#email').val();
                 }else{
                     window.location.href = "/swipe";
                 }
@@ -80,23 +80,21 @@ $(document).ready(function(){
     });
 
     //admin
-    $("#delete-meal-confirm").on('click', function (){
+    $(document).on('click', '#delete-meal-confirm', function(){
         let id = $(this).data('id');
-        $("#meal_id_to_delete").val(id);
-    })
-
-    $(document).on('click', '.delete-meal-btn', function(){
-        let id =  $("#meal_id_to_delete").val();
         console.log(id)
+        $(document).on('click', '.delete-meal-btn', function(){
             $.ajax({
                 url: '/api/meal/' + id,
                 type: 'DELETE',
                 success: function(result) {
                     // Do something with the result
                     location.reload();
-                }
-            });
-    })
+                    }
+                });
+            })
+        })
+
 
     $(document).on('click', '.edit-meal-btn', function(e){
         e.preventDefault();
