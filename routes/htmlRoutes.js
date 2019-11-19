@@ -95,16 +95,21 @@ module.exports = function(app) {
     });
   });
 
-
-  app.get("/chef/meals/", function(req, res) {
-    db.Meal.findAll({}).then(function(dbMeals) {
+  app.get("/chef/meals/:email", function(req, res) {
+    db.User.findAll({
+      where: {
+        email: req.params.email
+        },
+        include: [db.Meal]
+  }).then(function(chefInfo) {
       res.render("chef/meals/index", {
         msg: "meals index",
-        meals: dbMeals
+        chefInfo: chefInfo,
+        meals: chefInfo[0].dataValues.Meals
       });
+      // console.log(chefInfo[0].dataValues.Meals[0])
     });
   });
-
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

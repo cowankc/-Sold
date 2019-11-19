@@ -2,10 +2,11 @@
 
        <div class="row">
             <div class="col m3 s12">
-                    <div class="card">
+            {{#each chefInfo}}
+            <div class="card">
             <div class="card-image">
-            <img src="https://i.ibb.co/G7nCy1w/remy-hat.jpg">
-            <span class="card-title">Hi, Remy</span>
+            <img src="{{this.photo}}">
+            <span class="card-title">Hi, {{this.userName}}</span>
             </div>
             <div class="card-content">
                 <p>Rating: <span class="fa fa-star checked"></span>
@@ -20,6 +21,7 @@
             <a href="#" data-target="slide-out-create-meal" class="sidenav-trigger">Add New Meal</a>
             </div>
            </div>
+           {{/each}}
             </div>
            <div class="col m9 s12">
                <h4>Manage Your Meals</h4>
@@ -30,6 +32,7 @@
               <th>Name</th>
               <th class="hide-on-small-only">Category</th>
               <th>Price</th>
+              <th>Meal ID</th>
               <th></th>
           </tr>
         </thead>
@@ -41,9 +44,11 @@
             <td>{{this.mealName}}</td>
             <td class="hide-on-small-only">{{this.category}}</td>
             <td>${{this.price}}</td>
+            <td>{{this.id}}</td>
             <td>
             <a class="btn btn-small blue sidenav-trigger white-text edit-meal-btn btn-sm-action" data-id="{{this.id}}" href="#" data-target="slide-out-edit-meal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
             <button id="delete-meal-confirm" class="btn btn-small red modal-trigger btn-sm-action" href="#delete-meal-modal" data-id="{{this.id}}" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </td>
             </tr>
             {{/each}}
         </tbody>
@@ -64,7 +69,9 @@
     <li><div class="user-view">
         <h5>Create New Meal</h5>
             <div class="row">
-                <form class="col s12" action="/api/meal/1" method="POST">
+                 {{#each chefInfo}}
+                <form class="col s12" action="/api/meal/{{this.email}}" method="POST">
+                    {{!-- action="/api/meal/:userId" method="POST" --}}
                 <div class="row">
                     <div class="input-field col s12">
                     <i class="material-icons prefix">local_pizza</i>
@@ -108,8 +115,15 @@
                     </select>
                     <label>Pickup Address</label>
                 </div>
-                    <button class="btn btn-small blue" style="float: right">Save</button>
+                <div class="input-field col s12">
+                    <select  id="id" name="id">
+                       <option value="{{this.id}}" selected>{{this.id}}</option>
+                    </select>
+                     <label>Your Chef ID</label>
                 </div>
+                    <button id="addButton" class="btn btn-small blue" style="float: right">Save</button>
+                </div>
+                 {{/each}}
                 </form>
             </div>
       </div>
@@ -179,7 +193,7 @@
   <div id="delete-meal-modal" class="modal">
     <div class="modal-content">
       <h5>Are you sure you want to delete?</h5>
-      <input id="meal_id_to_delete" class="text" value="" hidden>
+      <input id="meal_id_to_delete" class="text" value="">
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
