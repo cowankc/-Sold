@@ -44,7 +44,7 @@
             <td>{{this.mealName}}</td>
             <td class="hide-on-small-only">{{this.category}}</td>
             <td>${{this.price}}</td>
-            <td>{{this.id}}</td>
+            <td class="hide-on-small-only">{{this.id}}</td>
             <td>
             <a class="btn btn-small blue sidenav-trigger white-text edit-meal-btn btn-sm-action" data-id="{{this.id}}" href="#" data-target="slide-out-edit-meal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
             <button id="delete-meal-confirm" class="btn btn-small red modal-trigger btn-sm-action" href="#delete-meal-modal" data-id="{{this.id}}" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -193,7 +193,7 @@
   <div id="delete-meal-modal" class="modal">
     <div class="modal-content">
       <h5>Are you sure you want to delete?</h5>
-      <input id="meal_id_to_delete" class="text" value="">
+      <input id="meal_id_to_delete" class="text" value="" hidden>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>

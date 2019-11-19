@@ -155,6 +155,7 @@ $(document).ready(function(){
     }
 
     $(document).on('click', '.update-meal-btn', function(e){
+        console.log('updatemealbutton clicked')
         e.preventDefault();
             let id = $(this).data('id');
 
