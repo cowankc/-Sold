@@ -60,9 +60,11 @@ allCards.forEach(function (el) {
     
     //detect swipe left or right
       if(event.additionalEvent === 'panleft'){
-       swipeleft()
+        let item = event.srcEvent.srcElement.dataset.item;
+       swipeleft(item)
       }else if(event.additionalEvent === 'panright'){
-       swiperight()
+        let item = event.srcEvent.srcElement.dataset.item;
+       swiperight(item)
       }
 
       var endX = Math.max(Math.abs(event.velocityX) * moveOutWidth, moveOutWidth);
@@ -90,10 +92,10 @@ function createButtonListener(love) {
     var card = cards[0];
 
     card.classList.add('removed');
-
     if (love) {
       card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
       swiperight();
+
     } else {
       card.style.transform = 'translate(-' + moveOutWidth + 'px, -100px) rotate(30deg)';
       swipeleft();
@@ -117,10 +119,19 @@ if(swiperContainer == null){
 }
 
 
-function swipeleft(){
-    console.log('swipe left')
+let swipedItems = [];
+
+console.log(swipedItems);
+
+function swipeleft(item){
+    console.log('swipe left' + item)
+    console.log(swipedItems);
+
 }
 
-function swiperight(){
-    console.log('swipe right')
+function swiperight(item){
+    console.log('swipe right' + item)
+    swipedItems.push(item);
+    localStorage.setItem('swipedItems', swipedItems)
+    console.log(swipedItems);
 }

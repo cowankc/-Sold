@@ -1,4 +1,4 @@
-INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt) 
+INSERT INTO users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt) 
 VALUES (
 'Tom Johnson',
 'https://media.istockphoto.com/photos/portrait-of-a-cheerful-young-man-picture-id545262108?k=6&m=545262108&s=612x612&w=0&h=atYvV2j41NyaDjFZAPnUrkaes1DNwMzFeRIOY4XhpAo=',
@@ -9,7 +9,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Cowboy Burger', 
 'https://www.tastefullysimple.com/_/media/images/recipes/cowboyburger.jpg',
@@ -21,7 +21,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'beef fajitas',
 'https://www.verywellfit.com/thmb/dm_0yG4ovnVTsbNv29FB-pjRMAo=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/fajitas-56a5c2803df78cf77289c87c.jpg',
@@ -33,7 +33,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Grilled Chicken Kabobs', 
 'https://cookinglsl.com/wp-content/uploads/2014/05/chicken-kebabs-musjrooms-4-1.jpg',
@@ -46,7 +46,7 @@ VALUES (
 '2019-11-10 18:34:13');
 
 
-INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt)
+INSERT INTO users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt)
  VALUES (
 'Giovanni Romano',
 'https://i.pinimg.com/236x/c2/82/1b/c2821b08e7debf3efae71019047b3e59--carnival-dress-girls-wear.jpg',
@@ -57,7 +57,7 @@ INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES ('Grilled Chicken Risotto', 
 'https://www.thespruceeats.com/thmb/OT9C15ZzeZETdJ6bxYCxEMIDnYc=/2500x1669/filters:fill(auto,1)/chickenrisotto2500-598cd29b6f53ba001014cb54.jpg',
 'Chicken, onions, rice, wine, chicken stock, parmesean',
@@ -68,7 +68,7 @@ VALUES ('Grilled Chicken Risotto',
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Pasta bolognese', 
 'https://www.jocooks.com/wp-content/uploads/2018/01/spaghetti-bolognese-1-3.jpg',
@@ -80,7 +80,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'fettuccine alfredo with Chicken', 
 'https://www.modernhoney.com/wp-content/uploads/2019/04/Chicken-Fettucine-Alfredo-6.jpg',
@@ -93,7 +93,7 @@ VALUES (
 '2019-11-10 18:34:13');
 
 
-INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt)
+INSERT INTO users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt)
  VALUES (
 'Kathy Ferguson',
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Mx-6eGvz3Nq4CN-chxiPgJkMZgv0F21NPe6w6ORoRDDmkFH_&s',
@@ -104,7 +104,7 @@ INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Homemade Mac and Cheese', 
 'https://i.redd.it/5fdab7dtrck01.jpg',
@@ -116,7 +116,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Grilled Ribeye', 
 'https://s3-media3.fl.yelpcdn.com/bphoto/kei4HzeQOpsC5iK45A-6Uw/348s.jpg',
@@ -129,7 +129,7 @@ VALUES (
 '2019-11-10 18:34:13');
 
 
-INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt)
+INSERT INTO users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt)
  VALUES (
 'Jerry Johnson',
 'https://obichammusaka.com/wp-content/uploads/2015/10/chef-old-man-magnifico.jpg',
@@ -140,7 +140,7 @@ INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'chicken cordon bleu', 
 'https://images.media-allrecipes.com/userphotos/4535588.jpg',
@@ -152,7 +152,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Chicken Enchilladas', 
 'https://www.theblackpeppercorn.com/wp-content/uploads/2013/08/Chicken-Enchiladas-full-angle-hires.jpg',
@@ -165,7 +165,7 @@ VALUES (
 '2019-11-10 18:34:13');
 
 
-INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt) 
+INSERT INTO users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt) 
 VALUES (
 'Stacy Washington',
 'https://www.wisebread.com/files/fruganomics/imagecache/605x340/blog-images/woman_cooking_pot_534722067.jpg',
@@ -176,7 +176,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Chicken Quesidilla', 
 'https://tatyanaseverydayfood.com/wp-content/uploads/2015/09/Chicken-Pepper-Quesadillas.jpg',
@@ -188,7 +188,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Sweet and Sour Chicken', 
 'https://www.crunchycreamysweet.com/wp-content/uploads/2018/07/sweet-and-sour-chicken-stir-fry-4.jpg',
@@ -200,7 +200,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
-INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'fish and chips', 
 'https://www.delonghi.com/Global/recipes/multifry/173.jpg',
@@ -213,7 +213,7 @@ VALUES (
 '2019-11-10 18:34:13');
 
 
-INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt) 
+INSERT INTO users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt) 
 VALUES (
 'Al Thompson',
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMykuDoQKRj6dfIsXq_SJzUWOCDWZLfBRE-F8tQv5xaxyH92cI&s',
@@ -224,7 +224,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
- INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+ INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Buffalo Wings', 
 'https://www.thespruceeats.com/thmb/C7b0KJGGltZW99RX8I1zBTpbNto=/1500x1000/filters:fill(auto,1)/traditional-chicken-wings-912937-10-5b3f8c9ac9e77c00547241ab.jpg',
@@ -237,7 +237,7 @@ VALUES (
 '2019-11-10 18:34:13');
 
 
-INSERT INTO Users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt) 
+INSERT INTO users (userName, photo, email, password, chef, chefRating, createdAt, updatedAt) 
 VALUES (
 'Guy Fieri',
 'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2013/5/15/0/fnd_Guy-Fieri-Diners-Drive-Ins-Dives_s4x3.jpg.rend.hgtvcom.616.462.suffix/1371616684348.jpeg',
@@ -248,7 +248,7 @@ VALUES (
 '2019-11-10 18:34:13',
 '2019-11-10 18:34:13');
 
- INSERT INTO Meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
+ INSERT INTO meals (mealName, photo, ingredients, price, address, category, UserId, createdAt, updatedAt) 
 VALUES (
 'Flavor Town Egg Roles', 
 'https://food.fnr.sndimg.com/content/dam/images/food/fullset/2014/3/28/1/ED0101UH_Chicken-Avocado-Egg-Rolls_4x3.jpg.rend.hgtvcom.1280.960.suffix/1396271489052.jpeg',

@@ -101,6 +101,7 @@ $(document).ready(function(){
     $(document).on('click', '.edit-meal-btn', function(e){
         e.preventDefault();
         let id = $(this).data('id');
+        console.log('id')
         console.log(id)
 
         //Get from LocalStorage

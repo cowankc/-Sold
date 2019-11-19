@@ -155,7 +155,7 @@ main {
   <div class="swiper--cards">
     
       {{#each meals}}
-      <div class="swiper--card">
+      <div class="swiper--card" data-item="{{this.dataValues.id}}">
       <img src="{{this.dataValues.photo}}" class="swiper--card-img">
       <h3>{{this.dataValues.mealName}}</h3>
  <p style="text-align:left;">
