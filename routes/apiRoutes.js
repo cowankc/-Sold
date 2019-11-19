@@ -158,8 +158,8 @@ module.exports = function(app) {
   });
 
   // Add a new meal
-  app.post("/api/meal/:userId", function(req, res) {
-    console.log(req.body);
+  app.post("/api/meal/:email", function(req, res) {
+    // console.log(req.body);
     console.log(req.params.email);
     db.Meal.create(
       {
@@ -172,7 +172,7 @@ module.exports = function(app) {
         UserId: req.body.id
       }).then(function(dbMeal) {
       // res.json(dbMeal);
-      res.redirect('/chef/meals/:email')
+      res.redirect('/chef/meals/' + req.params.email)
     });
   });
 

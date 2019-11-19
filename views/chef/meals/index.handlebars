@@ -69,7 +69,8 @@
     <li><div class="user-view">
         <h5>Create New Meal</h5>
             <div class="row">
-                <form class="col s12" action="/api/meal/:userId" method="POST">
+                 {{#each chefInfo}}
+                <form class="col s12" action="/api/meal/{{this.email}}" method="POST">
                     {{!-- action="/api/meal/:userId" method="POST" --}}
                 <div class="row">
                     <div class="input-field col s12">
@@ -115,15 +116,14 @@
                     <label>Pickup Address</label>
                 </div>
                 <div class="input-field col s12">
-                     {{#each chefInfo}}
                     <select  id="id" name="id">
                        <option value="{{this.id}}" selected>{{this.id}}</option>
                     </select>
-                     {{/each}}
                      <label>Your Chef ID</label>
                 </div>
                     <button id="addButton" class="btn btn-small blue" style="float: right">Save</button>
                 </div>
+                 {{/each}}
                 </form>
             </div>
       </div>

@@ -111,11 +111,6 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/chef/newmeal/:email", function(req, res) {
-    res.render("chef/meals/newmeal");
-  });
-
-
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
