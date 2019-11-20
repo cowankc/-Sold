@@ -59,6 +59,26 @@
         console.log("like count= " + likeCount);
         console.log("total votes= " + totalVotes);
     };
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 10,
+            center: {lat: 30.2672, lng: -97.7431}
+        });
+        var geocoder = new google.maps.Geocoder();
+        var address = document.getElementById("address").value
+        geocoder.geocode({'address': address}, function(results, status) {
+            if (status === 'OK') {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                console.log('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
     
     </script>
 
@@ -85,6 +105,12 @@
                             {{/each}}
                         </ol>
                     </div>
+                    <div>
+                    <h6>Meal Location</h6>
+                        <p>{{meal.address}}</p>
+                        <input id="address" value='{{meal.address}}'>
+                    </div>
+                    <div id="map"></div>
                 </div>
             </div>
         </div>
@@ -107,4 +133,7 @@
     <a href="/swipe"><i class="material-icons">subdirectory_arrow_left</i>Swipe Again</a>
 </div>
 
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWQ-sFtacE3m0IMYrFlP7w_dgNQpL-bBw&callback=initMap">
+    </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
