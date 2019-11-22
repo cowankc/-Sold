@@ -1,4 +1,4 @@
-{{!-- <head>
+<head>
 
     <style>
         #cart-area{
@@ -10,47 +10,16 @@
     </style>
 
     <script>
-        {{!-- test --}}
+    
     </script>
 
 </head>
-<main>
-    <div id="cart-area"></div>
-        <div class="row">
-            <h5 class="col sm8">Shopping Cart</h5>
-        </div>
-        <div class="row">
-        <table>
-            <thead>
-            <tr>
-                <th></th>
-                <th>Item</th>
-                <th>Price</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-                {{#each meals}}
-                <tr>
-                <td><img src="{{this.photo}}" width="100px"></td>
-                <td>{{this.mealName}}</td>
-                <td>${{this.price}}</td>
-                <td>
-                <a class="btn btn-small blue sidenav-trigger white-text edit-meal-btn btn-sm-action" data-id="{{this.id}}" href="#" data-target="slide-out-edit-meal"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                <button id="delete-meal-confirm" class="btn btn-small red modal-trigger btn-sm-action" href="#delete-meal-modal" data-id="{{this.id}}" type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                </tr>
-                {{/each}}
-            </tbody>
-        </table>
-        </div>
-    </div>
-</main>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
+
 <main>
-      <div id="items_table">
+      <div>
             <div class="container">
-                    <h2>Shopping List</h2>
+                    <h3 style="margin-left: 20px">Shopping Cart</h3>
                      <div class="row">
                          <table>
                             <thead>
@@ -61,18 +30,14 @@
                             </tr>
                             </thead>
 
-                            <tbody>
-                            <tr>
-                                <td><img src="https://www.theblackpeppercorn.com/wp-content/uploads/2013/08/Chicken-Enchiladas-full-angle-hires.jpg" width="100"></td>
-                                <td>Cheesey Enchiladas</td>
-                                <td>$8.00</td>
-                            </tr>
+                            <tbody id="items_table">
                            
                             </tbody>
                         </table>
                         <br>
                         <br>
                         <button class="btn red right" style="margin-right: 20px">Checkout</button>
+                        <button class="btn right btn-clear-cart" style="margin-right: 20px">Clear Cart</button>
                      </div>
                 </div>
 

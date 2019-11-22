@@ -172,4 +172,10 @@ $(document).ready(function(){
         );
     })
 
+    $(document).on('click', '.btn-clear-cart', function(e){
+        e.preventDefault();
+        localStorage.removeItem('swipedItems')
+        location.reload();
+    })
+
 });

@@ -94,6 +94,7 @@ function createButtonListener(love) {
     card.classList.add('removed');
     if (love) {
       card.style.transform = 'translate(' + moveOutWidth + 'px, -100px) rotate(-30deg)';
+      
       swiperight();
 
     } else {
@@ -118,20 +119,56 @@ if(swiperContainer == null){
   love.addEventListener('click', loveListener);
 }
 
-
 let swipedItems = [];
 
+if(localStorage.getItem('swipedItems') === undefined || localStorage.getItem('swipedItems') === null){
+
+}else{
+swipedItems = JSON.parse(localStorage.getItem('swipedItems'));
+}
 console.log(swipedItems);
 
-function swipeleft(item){
-    console.log('swipe left' + item)
-    console.log(swipedItems);
 
+function swipeleft(item){
+//swipe left
 }
 
 function swiperight(item){
-    console.log('swipe right' + item)
-    swipedItems.push(item);
-    localStorage.setItem('swipedItems', swipedItems)
-    console.log(swipedItems);
+    if(item === null || item === undefined){
+      //if null don't push
+    }else{
+      swipedItems.push(item);
+      localStorage.setItem('swipedItems', JSON.stringify(swipedItems))
+      console.log(swipedItems);
+    }
+}
+
+
+//Load Cart Stuff
+if($('#items_table').val() === undefined){
+  //cart not here so do nothing
+}else{
+ //remove duplicates before appending to cart
+ swipedItems = [...new Set(swipedItems)]
+  for(let item of swipedItems){
+    appendCartItems(item)
+  }
+}
+
+
+function appendCartItems(id){
+    $.ajax({
+        url: "/api/meal/" + id,
+        type: "GET",
+        success: function (response) {
+         let {mealName, photo, price } =   response.data;
+
+         $('#items_table').append(`<tr>
+         <td><img src="${photo}" width="100"></td>
+         <td>${mealName}</td>
+         <td>$${price}</td>
+       </tr>`)
+
+        }
+      });
 }
